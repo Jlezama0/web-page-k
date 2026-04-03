@@ -1,5 +1,8 @@
-body{
-    background-color: black;
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: white;
 }
 .container-index{
     display: flex;
@@ -22,7 +25,7 @@ body{
     z-index: 1;
 }
 
-use-nav{
+.container-index use-nav{
     position: fixed;
     display: block;
     width: fit-content;
@@ -34,14 +37,13 @@ use-nav{
 nav{
     
     width: fit-content;
-    /*border: 4px solid red;*/
     text-align: center;
     padding: 10px;
     font-family: "Geist Mono", monospace;
     font-weight: 400;
 }
 
-nav a {
+.container-index nav a {
     padding-inline: 50px;
     color: white;
     text-decoration: none;
@@ -49,28 +51,239 @@ nav a {
 }
 
 .container-table {
-    border: 4px solid red;
     position: fixed;
     bottom: 0;
     margin-bottom: 50px;
 }
 
-table tr th {
-    padding-inline: 60px;
-    padding-bottom: 25px;
-    color: aliceblue;
+table {
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+
 }
+
+table tr {
+    color: black;
+    font-size: 15px;
+    text-align: left;
+}
+
+table th, table td{
+    padding-right: 60px;
+    padding-bottom: 20px;
+}
+
+
 
 /* photo.html */
 
+.container-photos nav a {
+    padding-inline: 50px;
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+}
+
 .container-photos{
+    display: grid;
+    place-items: center;
+    /*border: 4px solid blue; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel {
+    top: 0;
+    position: absolute;
+    margin-top: 20px;
+    /*border: 4px solid red;*/
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.item-galeria {
+    display: flex;
+    flex-direction: column; /* FOTO ARRIBA, TEXTO ABAJO */
+    align-items: start;
+    margin: 0;
+    min-width: 200px; /* Ajusta según el tamaño que quieras */
+}
+
+.carousel::-webkit-scrollbar{
+    display: none;
+    gap: 1em;
+}
+
+.group{
+
+    display: flex;
+    justify-content: center;
+    gap: 3em;
+    animation: spin 60s infinite linear;
+    padding-right: 1em;
+}
+
+.carousel .group a {
+    display: flex;
+}
+
+.carousel .group a .imgFront{
+    flex: 0 0 5em;
+    padding: 0;
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    alt: unset;
+}
+
+.pie-foto {
+    padding-top: 10px;
+    color: black;
+    font-size: 13px;
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+}
+
+@keyframes spin{
+    from {translate: 0;}
+    to{translate: -100%;}
+}
+
+/* template.html */
+
+.container-template{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-photo-info{
+    display: flex;
+    align-items: center;
+}
+
+
+.container-template nav{
+    
+    width: fit-content;
+    margin-inline: auto;
+    margin-top: 25px;
+    text-align: center;
+    padding: 10px;
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+}
+
+.container-template nav a {
+    padding-inline: 50px;
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.slider-wrapper{
+    position: relative;
+    max-width: 1200px;
+    max-height: auto;
+    margin: 0 auto;
+    margin-left: 50px;
+}
+
+.slider {
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 .25rem .5rem #ffffffbd;
+    border-radius: .5rem;
+}
+
+.slider img {
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: contain;
+}
+
+.slider-nav{
+    display: flex;
+    column-gap: 1rem;
+    position: absolute;
+    bottom: 1.25rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.slider-nav a {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+    opacity: .60;
+    transition: opacity ease 250ms;
+}
+
+.slider-nav a:hover {
+    opacity: 100%;
+}
+
+.info-template{
+    margin-right: 25px;
+}
+
+.info-template h1{
+    color: black;
+    font-size: 30px;
+    font-family: "Geist Mono", monospace;
+    font-weight: 700;
+}
+
+.row-click {
+    cursor: pointer;
+}
+
+/* info.html */
+
+.container-info {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 4px solid blue;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+}
+
+.container-info h1 {
+    margin-top: 50px;
+    text-align: center;
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
+
+}
+
+.container-info P {
+    display: flex;
+    text-align: justify;
+    width: 50%;
+    font-size: 20px;
+    font-family: "Geist Mono", monospace;
+    font-weight: 300;
+}
+
+.container-info nav {
+    margin-top: 50px;
+}
+
+.container-info nav a {
+    padding-inline: 50px;
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    font-family: "Geist Mono", monospace;
+    font-weight: 400;
 }
