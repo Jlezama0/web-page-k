@@ -14,7 +14,7 @@ async function loadGallery() {
         // Generamos el HTML con estructura de bloque (Figure)
         const htmlCompleto = fotos.map(foto => `
             <figure class="item-galeria">
-                <a href="../html/${foto.name}.html">
+                <a href="../${foto.name}.html">
                     <img class="imgFront" src="${foto.url}" alt="${foto.alt}">
                 </a>
                 <figcaption class="pie-foto">${foto.alt}</figcaption>
