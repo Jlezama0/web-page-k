@@ -8,7 +8,7 @@ document.querySelectorAll('.row-click').forEach(fila => {
 
 async function loadGallery() {
     try {
-        const response = await fetch('../resourcesJSON/fotos.json');
+        const response = await fetch('resourcesJSON/fotos.json');
         const fotos = await response.json();
 
         // Generamos el HTML con estructura de bloque (Figure)
