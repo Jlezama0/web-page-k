@@ -170,6 +170,7 @@ table th, table td{
     gap: 3em;
     animation: spin 30s infinite linear;
     padding-right: 1em;
+    will-change: transform;
 }
 
 .carousel .group a {
@@ -193,9 +194,9 @@ table th, table td{
     font-weight: 300;
 }
 
-@keyframes spin{
-    from {translate: 0;}
-    to{translate: -100%;}
+@keyframes spin {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
 }
 
 @media (max-width: 768px) {
